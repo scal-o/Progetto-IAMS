@@ -43,21 +43,27 @@ R_om = [cos(om),  sin(om),  0;
 
 % Matrici di trasformazione
 
-T_ECI_to_PF = R_om * R_i * R_OM;         % Trasformazione dal sistema ECI al sistema PF
-T_PF_to_ECI = T_ECI_to_PF';              % Trasformazione dal sistema PF al sistema ECI
+T_ECI_to_PF = R_om * R_i * R_OM         % Trasformazione dal sistema ECI al sistema PF
+T_PF_to_ECI = T_ECI_to_PF'              % Trasformazione dal sistema PF al sistema ECI
 
 
 %% Calcoliamo i vettori velocità e raggio nel sistema PF
 
-p = a * (1-e^2);                                        % semilato retto
+p = a * (1-e^2);                        % semilato retto
 
-r = p / (1 + e * cos(th));                              % modulo della posizione
-rr_pf = r * [cos(th); sin(th); 0];                      % vettore posizione in PF
-vv_pf = sqrt(mu/p) * [-sin(th); e + cos(th); 0];        % vettore velocità in PF
+r = p / (1 + e * cos(th));              % modulo della posizione
+rr_pf = r * [cos(th); sin(th); 0];      % vettore posizione in PF
+vv_pf = sqrt(mu/p) * [-sin(th); e + cos(th); 0]; % vettore velocità in PF
+
+vs_pf = [rr_pf ; vv_pf];                  % vettore di stato in PeriFocale
 
 
-rr = T_PF_to_ECI * rr_pf;                % vettore posizione in ECI
-vv = T_PF_to_ECI * vv_pf;                % vettore velocità in ECI
+
+
+rr = T_eci_pf' * rr_pf;                % vettore posizione in ECI
+vv = T_eci_pf' * vv_pf;                % vettore velocità in ECI
+vs_eci = [r_eci; vv];                  % vettore di stato in ECI
+
 
 
 fprintf("\n Considerando gli input di par2car in radianti\n");
