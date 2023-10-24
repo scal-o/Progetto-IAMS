@@ -56,6 +56,8 @@ rr_pf = r * [cos(th); sin(th); 0];                      % vettore posizione in P
 vv_pf = sqrt(mu/p) * [-sin(th); e + cos(th); 0];        % vettore velocità in PF
 
 
+%% Trasformiamo i vettori dal sistema PF al sistema ECI
+
 rr = T_PF_to_ECI * rr_pf;                % vettore posizione in ECI
 vv = T_PF_to_ECI * vv_pf;                % vettore velocità in ECI
 
