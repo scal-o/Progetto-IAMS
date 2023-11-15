@@ -62,6 +62,4 @@ rr = T_PF_to_ECI * rr_pf;                % vettore posizione in ECI
 vv = T_PF_to_ECI * vv_pf;                % vettore velocità in ECI
 
 
-fprintf("\n Considerando gli input di par2car in radianti\n");
-
 end

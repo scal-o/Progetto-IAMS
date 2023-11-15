@@ -74,14 +74,13 @@ end
 
 %% OUTPUT
 
-fprintf("\n Semiasse maggiore : %f",a);
-fprintf("\n Eccentricità : %f",e);
-fprintf("\n Inclinazione : %f",i);
-fprintf("\n RAAN : %f",OM);
-fprintf("\n Anomalia del pericentro : %f",om);
-fprintf("\n Anomalia vera : %d",th);
+% fprintf("\n Semiasse maggiore : %f",a);
+% fprintf("\n Eccentricità : %f",e);
+% fprintf("\n Inclinazione : %f",i);
+% fprintf("\n RAAN : %f",OM);
+% fprintf("\n Anomalia del pericentro : %f",om);
+% fprintf("\n Anomalia vera : %d",th);
 
-fprintf("\n Output di car2par in radianti\n");
 
 
 end

@@ -1,0 +1,1 @@
+- in ogni funzione inserire controllo rad/deg
